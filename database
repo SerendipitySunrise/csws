@@ -1,0 +1,128 @@
+INSERT INTO menu_items (category, name, description, price) VALUES
+-- Hot Coffee
+('Hot Coffee', 'Americano', 'Hot espresso with water', 90),
+('Hot Coffee', 'Cappuccino', 'Espresso with steamed milk and foam', 120),
+('Hot Coffee', 'Café Latte', 'Espresso with steamed milk', 120),
+('Hot Coffee', 'Mocha', 'Espresso with chocolate and milk', 130),
+('Hot Coffee', 'Caramel Macchiato', 'Espresso with caramel syrup and milk foam', 140),
+
+-- Iced Coffee
+('Iced Coffee', 'Iced Americano', 'Chilled espresso with cold water', 100),
+('Iced Coffee', 'Iced Latte', 'Cold milk with espresso', 120),
+('Iced Coffee', 'Iced Mocha', 'Espresso, chocolate, and milk over ice', 130),
+('Iced Coffee', 'Iced Caramel Macchiato', 'Caramel espresso drink over ice', 140),
+('Iced Coffee', 'Iced Spanish Latte', 'Espresso with condensed milk and ice', 140),
+('Iced Coffee', 'Cold Brew', 'Slow-steeped coffee served cold', 110),
+('Iced Coffee', 'Iced Hazelnut Latte', 'Espresso with hazelnut syrup and milk over ice', 135),
+('Iced Coffee', 'Iced Vanilla Latte', 'Espresso with vanilla syrup and milk over ice', 135),
+
+-- Espresso
+('Espresso', 'Single Shot Espresso', 'One shot of rich espresso', 80),
+('Espresso', 'Double Shot Espresso', 'Two shots of strong espresso', 100),
+('Espresso', 'Macchiato', 'Espresso topped with a small amount of milk foam', 90),
+('Espresso', 'Cortado', 'Espresso cut with equal part steamed milk', 100),
+('Espresso', 'Ristretto', 'Shorter, more concentrated espresso shot', 85),
+('Espresso', 'Long Black', 'Hot water poured over espresso', 95),
+('Espresso', 'Affogato', 'Espresso poured over vanilla ice cream', 150),
+
+-- Tea
+('Tea', 'English Breakfast Tea', 'Classic strong black tea blend', 70),
+('Tea', 'Earl Grey Tea', 'Black tea infused with bergamot flavor', 75),
+('Tea', 'Green Tea', 'Light and refreshing steamed green tea', 75),
+('Tea', 'Jasmine Tea', 'Fragrant floral green tea', 80),
+('Tea', 'Chamomile Tea', 'Relaxing caffeine-free herbal infusion', 80),
+('Tea', 'Peppermint Tea', 'Refreshing and cooling mint herbal tea', 80),
+('Tea', 'Lemon Ginger Tea', 'Zesty herbal tea with lemon and ginger', 85),
+('Tea', 'Milk Tea (Classic / Wintermelon / Matcha)', 'Sweetened milk-based tea with flavor options', 110),
+
+-- Pastries
+('Pastries', 'Croissant (Butter / Chocolate / Almond)', 'Flaky, buttery layered pastry in assorted flavors', 70),
+('Pastries', 'Muffins (Blueberry / Chocolate Chip / Banana)', 'Soft, sweet baked muffins in different varieties', 65),
+('Pastries', 'Cinnamon Roll', 'Sweet roll with cinnamon filling and icing', 80),
+('Pastries', 'Donuts', 'Soft ring-shaped fried pastry with glaze or sugar', 50),
+('Pastries', 'Cheesecake Slice', 'Creamy cheesecake served per slice', 110),
+('Pastries', 'Brownie', 'Dense, fudgy chocolate square', 75),
+('Pastries', 'Banana Bread', 'Moist loaf made with ripe bananas', 70),
+('Pastries', 'Cookies', 'Freshly baked cookies (chocolate chip or oatmeal)', 55),
+('Pastries', 'Ensaymada', 'Soft, sweet bread topped with butter, sugar, and cheese', 60);
+
+
+
+
+
+
+
+
+
+------------------------------------------------------------------------------
+
+INSERT INTO add_ons (category, name, description, price) VALUES
+('Add-Ons / Extras', 'Extra Espresso Shot', 'Add one additional shot of espresso', 30),
+('Add-Ons / Extras', 'Flavored Syrups (Vanilla, Caramel, Hazelnut, Mocha)', 'Sweet flavor syrup options for drinks', 20),
+('Add-Ons / Extras', 'Whipped Cream', 'Creamy topping for hot or cold beverages', 15),
+('Add-Ons / Extras', 'Oat Milk / Almond Milk / Soy Milk', 'Non-dairy milk substitutes', 25),
+('Add-Ons / Extras', 'Ice Cream Scoop', 'Add a scoop of ice cream to drinks or desserts', 40),
+('Add-Ons / Extras', 'Sugar-Free Syrup', 'Low-calorie sweetener option', 20),
+('Add-Ons / Extras', 'Chocolate Drizzle', 'Extra chocolate syrup topping', 10),
+('Add-Ons / Extras', 'Extra Foam', 'Add more milk foam for a creamier texture', 10);
+
+------------------------------------------------------------------------------
+
+  CREATE TABLE Ingredients (
+    ingredient_id INT AUTO_INCREMENT PRIMARY KEY,
+    ingredient_name VARCHAR(100) NOT NULL,
+    category_used_in VARCHAR(100) NOT NULL,
+    quantity DECIMAL(10,2) NOT NULL,
+    unit VARCHAR(20) NOT NULL,
+    date_added TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+------------------------------------------------
+-- Insert Ingredients Data
+------------------------------------------------
+INSERT INTO Ingredients (ingredient_name, category_used_in, quantity, unit) VALUES
+('Espresso', 'Hot Coffee / Iced Coffee / Espresso', 1, 'shot'),
+('Hot Water', 'Hot Coffee / Espresso / Tea', 100, 'ml'),
+('Steamed Milk', 'Hot Coffee / Espresso', 100, 'ml'),
+('Milk Foam', 'Hot Coffee / Add-Ons', 20, 'ml'),
+('Chocolate Syrup', 'Hot Coffee / Iced Coffee / Add-Ons', 30, 'ml'),
+('Caramel Syrup', 'Hot Coffee / Iced Coffee / Add-Ons', 30, 'ml'),
+('Condensed Milk', 'Iced Coffee', 40, 'ml'),
+('Fresh Milk', 'Iced Coffee / Hot Coffee', 100, 'ml'),
+('Ice', 'Iced Coffee', 150, 'g'),
+('Hazelnut Syrup', 'Iced Coffee / Add-Ons', 30, 'ml'),
+('Vanilla Syrup', 'Iced Coffee / Add-Ons', 30, 'ml'),
+('Ground Coffee Beans', 'Espresso / Cold Brew', 15, 'g'),
+('Cold Water', 'Iced Coffee / Cold Brew', 100, 'ml'),
+('Vanilla Ice Cream', 'Espresso / Add-Ons', 1, 'scoop'),
+('Whipped Cream', 'Hot / Iced Coffee / Add-Ons', 30, 'g'),
+('Oat Milk', 'Add-Ons', 100, 'ml'),
+('Almond Milk', 'Add-Ons', 100, 'ml'),
+('Soy Milk', 'Add-Ons', 100, 'ml'),
+('Sugar-Free Syrup', 'Add-Ons', 20, 'ml'),
+('Chocolate Drizzle', 'Add-Ons', 10, 'ml'),
+('Extra Foam', 'Add-Ons', 20, 'ml'),
+('Black Tea Leaves', 'Tea', 5, 'g'),
+('Green Tea Leaves', 'Tea', 5, 'g'),
+('Jasmine Flowers', 'Tea', 3, 'g'),
+('Chamomile Flowers', 'Tea', 3, 'g'),
+('Peppermint Leaves', 'Tea', 3, 'g'),
+('Lemon Peel', 'Tea', 2, 'g'),
+('Ginger', 'Tea', 2, 'g'),
+('Tapioca Pearls', 'Milk Tea', 30, 'g'),
+('Milk Tea Flavor Syrup', 'Milk Tea', 20, 'ml'),
+('Flour', 'Pastries', 500, 'g'),
+('Butter', 'Pastries', 200, 'g'),
+('Sugar', 'Pastries / Add-Ons', 150, 'g'),
+('Eggs', 'Pastries', 4, 'pcs'),
+('Yeast', 'Pastries', 10, 'g'),
+('Baking Powder', 'Pastries', 5, 'g'),
+('Cocoa Powder', 'Pastries / Brownies', 50, 'g'),
+('Cream Cheese', 'Cheesecake', 200, 'g'),
+('Bananas', 'Banana Bread', 2, 'pcs'),
+('Cheese', 'Ensaymada', 50, 'g'),
+('Cinnamon', 'Cinnamon Roll', 10, 'g'),
+('Oats', 'Cookies', 30, 'g'),
+('Chocolate Chips', 'Pastries / Cookies / Muffins', 40, 'g'),
+('Graham Crust', 'Cheesecake', 100, 'g'),
+('Cream', 'Pastries / Add-Ons', 50, 'ml');
