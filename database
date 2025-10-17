@@ -56,15 +56,16 @@ INSERT INTO menu_items (category, name, description, price) VALUES
 
 ------------------------------------------------------------------------------
 
-INSERT INTO add_ons (category, name, description, price) VALUES
-('Add-Ons / Extras', 'Extra Espresso Shot', 'Add one additional shot of espresso', 30),
-('Add-Ons / Extras', 'Flavored Syrups (Vanilla, Caramel, Hazelnut, Mocha)', 'Sweet flavor syrup options for drinks', 20),
-('Add-Ons / Extras', 'Whipped Cream', 'Creamy topping for hot or cold beverages', 15),
-('Add-Ons / Extras', 'Oat Milk / Almond Milk / Soy Milk', 'Non-dairy milk substitutes', 25),
-('Add-Ons / Extras', 'Ice Cream Scoop', 'Add a scoop of ice cream to drinks or desserts', 40),
-('Add-Ons / Extras', 'Sugar-Free Syrup', 'Low-calorie sweetener option', 20),
-('Add-Ons / Extras', 'Chocolate Drizzle', 'Extra chocolate syrup topping', 10),
-('Add-Ons / Extras', 'Extra Foam', 'Add more milk foam for a creamier texture', 10);
+INSERT INTO addons (type, name, extra_cost, status) VALUES
+('shot', 'Extra Espresso Shot', 30.00, 'active'),
+('syrup', 'Flavored Syrups (Vanilla, Caramel, Hazelnut, Mocha)', 20.00, 'active'),
+(NULL, 'Whipped Cream', 15.00, 'active'),
+('milk', 'Oat Milk / Almond Milk / Soy Milk', 25.00, 'active'),
+(NULL, 'Ice Cream Scoop', 40.00, 'active'),
+('syrup', 'Sugar-Free Syrup', 20.00, 'active'),
+('syrup', 'Chocolate Drizzle', 10.00, 'active'),
+('milk', 'Extra Foam', 10.00, 'active');
+
 
 ------------------------------------------------------------------------------
 
