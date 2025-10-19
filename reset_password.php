@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 if ($stmt_update = $conn->prepare($update)) {
                     $stmt_update->bind_param("sss", $new_password, $email, $phone);
                     if ($stmt_update->execute()) {
-                        $message = "<p style='color:green;'>✅ Password successfully reset! You can now <a href='login.php'>login</a>.</p>";
+                        $message = "<p style='color:green;'>✅ Password successfully reset! You can now login.</p>";
                     } else {
                         $message = "<p style='color:red;'>⚠️ Error updating password. Please try again later.</p>";
                     }
@@ -90,7 +90,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <button type="submit">Reset Password</button>
 
             <div class="form-footer">
-                <p>Remember your password? <a href="index.html">Sign In</a></p>
+                <p>Remember your password? <a href="login.html">Log In</a></p>
             </div>
         </form>
     </div>
